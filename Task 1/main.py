@@ -26,10 +26,10 @@ def fetch_weather(city, api_key):
 
 # API Key for OpenWeatherMap
 # replace with your own API key
-API_KEY = "9cc451d00ed7feb355d9923f0bdf79da"
+API_KEY = "Enter Your API Key"
 
 # Cities to analyze
-cities = ["Mumbai", "Delhi", "Nagpur", "Kolkata", "Chennai", "Amravati", "Pune"]
+cities = ["Mumbai", "Delhi", "Nagpur", "Kolkata", "Chennai", "Badnera", "Pune"]
 weather_data = []
 
 # Fetch data for each city
