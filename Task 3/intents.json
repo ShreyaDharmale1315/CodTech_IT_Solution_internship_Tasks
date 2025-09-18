@@ -1,0 +1,39 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning"],
+      "responses": ["Hello! How can I help you?", "Hi there!"]
+    },
+    {
+      "tag": "name",
+      "patterns": ["What is your name?", "Who are you?"],
+      "responses": ["I am CodTech AI Chatbot.", "You can call me CodTech Bot."]
+    },
+    {
+      "tag": "mood",
+      "patterns": ["How are you?", "How’s it going?"],
+      "responses": ["I'm doing great! How about you?", "Feeling awesome, thanks for asking!"]
+    },
+    {
+      "tag": "tajmahal",
+      "patterns": ["Where is Taj Mahal?", "Tell me about Taj Mahal"],
+      "responses": ["The Taj Mahal is located in Agra, India. It is a UNESCO World Heritage Site."]
+    },
+    {
+      "tag": "shivaji",
+      "patterns": ["Who was Shivaji?", "Tell me about Shivaji Maharaj"],
+      "responses": ["Chhatrapati Shivaji Maharaj was the founder of the Maratha Empire in western India."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": ["Goodbye! Take care.", "See you later!"]
+    },
+    {
+      "tag": "default",
+      "patterns": [],
+      "responses": ["Sorry, I didn’t quite get that. Can you rephrase?"]
+    }
+  ]
+}

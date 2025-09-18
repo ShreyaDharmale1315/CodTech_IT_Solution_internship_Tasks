@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodTech Chatbot</title>
+  <style>
+    body{ 
+    font-family: Arial; 
+    margin: 20px; 
+    background-color: cornflowerblue;
+    }
+    .chatbox{ 
+    width: 95vmax; 
+    height: 400px; 
+    background-color: black;
+    border: 3px solid #4cb9ef; 
+    padding: 10px; 
+    overflow-y: scroll; 
+    }
+    .user { color: blue; }
+    .bot { color: green; }
+    input{
+        margin: 10px;
+        padding: 20px;
+        width: 80vmax;
+        border: 2px solid black;
+        font-size: large;
+        font-weight: bold;
+    }
+    
+    button{
+        margin: 10px;
+        padding: 20px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 8px;
+        background-color: aqua;
+        font-size: large;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>🤖 CodTech AI Chatbot</h2>
+  <div class="chatbox" id="chatbox"></div>
+  <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter'){sendMessage()}">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    async function sendMessage() {
+      let userInput = document.getElementById("userInput").value;
+      let chatbox = document.getElementById("chatbox");
+      chatbox.innerHTML += "<p class='user'><b>You:</b> " + userInput + "</p>";
+      document.getElementById("userInput").value = "";
+
+      let response = await fetch("/get", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userInput })
+      });
+      let data = await response.json();
+      chatbox.innerHTML += "<p class='bot'><b>Bot:</b> " + data.response + "</p>";
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
